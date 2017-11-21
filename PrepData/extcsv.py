@@ -102,6 +102,24 @@ class OperateCSV(object):
             data = self.rawdata
         return data[dest_key][data[source_key] == source_value]
 
+    def unique_value_by_key(self, key, data = None):
+        """
+        Get unique value by a key
 
+        Parameters:
+        ------------
+        key: a string. key name of data
+
+        Return:
+        -------
+        unique_data: unique list data
+
+        Examples:
+        ---------
+        >>> self.unique_value_by_key('Gender')
+        """
+        if data is None:
+            data = self.rawdata
+        return np.unique(data[key]).tolist()
 
 
